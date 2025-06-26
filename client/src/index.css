@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(240, 10%, 3.9%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(240, 10%, 3.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(240, 10%, 3.9%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(0, 84%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(210, 40%, 98%);
+  --secondary-foreground: hsl(222, 84%, 5%);
+  --accent: hsl(210, 40%, 98%);
+  --accent-foreground: hsl(222, 84%, 5%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(215, 20%, 65%);
+  --radius: 0.5rem;
+  
+  /* Chilean government inspired colors */
+  --chile-red: hsl(0, 84%, 60%);
+  --chile-blue: hsl(220, 91%, 34%);
+  --gov-blue: hsl(217, 91%, 60%);
+  --trust-gray: hsl(215, 16%, 47%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(0, 84%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-chile-red {
+    background-color: var(--chile-red);
+  }
+  
+  .text-chile-red {
+    color: var(--chile-red);
+  }
+  
+  .border-chile-red {
+    border-color: var(--chile-red);
+  }
+  
+  .hover\:bg-chile-red:hover {
+    background-color: var(--chile-red);
+  }
+  
+  .bg-chile-blue {
+    background-color: var(--chile-blue);
+  }
+  
+  .text-chile-blue {
+    color: var(--chile-blue);
+  }
+  
+  .text-trust-gray {
+    color: var(--trust-gray);
+  }
+}
+
+/* Custom styles for NotaryPro */
+.chile-gradient {
+  background: linear-gradient(135deg, var(--chile-blue), var(--gov-blue), #3B82F6);
+}
+
+.trust-gradient {
+  background: linear-gradient(135deg, var(--trust-gray), #6B7280);
+}
+
+.btn-chile {
+  background-color: var(--chile-red);
+  color: white;
+}
+
+.btn-chile:hover {
+  background-color: hsl(0, 84%, 50%);
+}
+
+.btn-chile-outline {
+  border: 2px solid var(--chile-red);
+  color: var(--chile-red);
+}
+
+.btn-chile-outline:hover {
+  background-color: var(--chile-red);
+  color: white;
+}
+
+/* Role-specific colors for user management */
+.bg-red-100 { background-color: hsl(355, 100%, 95%); }
+.text-red-700 { color: hsl(355, 78%, 45%); }
+.bg-red-50 { background-color: hsl(355, 100%, 97%); }
+.text-red-800 { color: hsl(355, 78%, 35%); }
+
+.bg-blue-100 { background-color: hsl(211, 100%, 95%); }
+.text-blue-700 { color: hsl(211, 80%, 45%); }
+.bg-blue-50 { background-color: hsl(211, 100%, 97%); }
+.text-blue-800 { color: hsl(211, 80%, 35%); }
+
+.bg-green-100 { background-color: hsl(142, 76%, 90%); }
+.text-green-700 { color: hsl(142, 71%, 35%); }
+.bg-green-50 { background-color: hsl(142, 76%, 95%); }
+.text-green-800 { color: hsl(142, 71%, 25%); }
+
+.bg-purple-100 { background-color: hsl(270, 95%, 92%); }
+.text-purple-700 { color: hsl(270, 91%, 40%); }
+.bg-purple-50 { background-color: hsl(270, 95%, 96%); }
+.text-purple-800 { color: hsl(270, 91%, 30%); }
+
+.bg-indigo-100 { background-color: hsl(231, 95%, 92%); }
+.text-indigo-700 { color: hsl(231, 91%, 40%); }
+.bg-indigo-50 { background-color: hsl(231, 95%, 96%); }
+.text-indigo-800 { color: hsl(231, 91%, 30%); }
+
+.bg-orange-100 { background-color: hsl(25, 95%, 90%); }
+.text-orange-700 { color: hsl(25, 91%, 40%); }
+.bg-orange-50 { background-color: hsl(25, 95%, 95%); }
+.text-orange-800 { color: hsl(25, 91%, 30%); }
+
+.bg-gray-100 { background-color: hsl(210, 20%, 92%); }
+.text-gray-700 { color: hsl(210, 14%, 40%); }
+.bg-gray-50 { background-color: hsl(210, 20%, 96%); }
+.text-gray-800 { color: hsl(210, 14%, 30%); }
+
+/* Role-based color schemes */
+.role-superadmin {
+  @apply bg-gradient-to-br from-red-500 to-red-600 text-white;
+}
+
+.role-certificador {
+  @apply bg-gradient-to-br from-blue-500 to-blue-600 text-white;
+}
+
+.role-vecino {
+  @apply bg-gradient-to-br from-green-500 to-green-600 text-white;
+}
+
+.role-usuario {
+  @apply bg-gradient-to-br from-purple-500 to-purple-600 text-white;
+}
+
+.role-socios {
+  @apply bg-gradient-to-br from-indigo-500 to-indigo-600 text-white;
+}
+
+.role-rrhh {
+  @apply bg-gradient-to-br from-orange-500 to-orange-600 text-white;
+}
+
+/* Status indicators */
+.status-pending {
+  @apply bg-orange-100 text-orange-700;
+}
+
+.status-certified {
+  @apply bg-green-100 text-green-700;
+}
+
+.status-rejected {
+  @apply bg-red-100 text-red-700;
+}
+
+.status-draft {
+  @apply bg-gray-100 text-gray-700;
+}
+
+/* Smooth animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Professional form styling */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--trust-gray);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: var(--chile-red);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1);
+}
+
+/* Dashboard card styling */
+.dashboard-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card {
+  background: linear-gradient(to bottom right, white, #f9fafb);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* Role-specific color schemes */
+.role-superadmin {
+  background: linear-gradient(to bottom right, var(--chile-red), hsl(0, 84%, 50%));
+  color: white;
+}
+
+.role-certificador {
+  background: linear-gradient(to bottom right, var(--chile-blue), hsl(220, 91%, 25%));
+  color: white;
+}
+
+.role-vecino {
+  background: linear-gradient(to bottom right, hsl(142, 76%, 36%), hsl(142, 76%, 30%));
+  color: white;
+}
+
+.role-usuario {
+  background: linear-gradient(to bottom right, hsl(262, 83%, 58%), hsl(262, 83%, 50%));
+  color: white;
+}
+
+.role-socios {
+  background: linear-gradient(to bottom right, hsl(24, 95%, 53%), hsl(24, 95%, 45%));
+  color: white;
+}
+
+.role-rrhh {
+  background: linear-gradient(to bottom right, hsl(178, 84%, 40%), hsl(178, 84%, 35%));
+  color: white;
+}

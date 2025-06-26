@@ -1,0 +1,43 @@
+{
+  "name": "NotaryPro + VecinoXpress",
+  "short_name": "NotaryPro",
+  "description": "Plataforma digital de certificación legal para Chile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es-CL",
+  "dir": "ltr",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Crear Documento",
+      "short_name": "Crear",
+      "description": "Crear un nuevo documento legal",
+      "url": "/pos-terminal",
+      "icons": [
+        {
+          "src": "/icons/shortcut-create.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
